@@ -5,7 +5,11 @@ program Project1;
 {$R *.res}
 
 uses
-  System.SysUtils;
+  System.SysUtils,
+  UClienteEntity in 'domain\entities\UClienteEntity.pas',
+  UClienteInterface in 'domain\interfaces\UClienteInterface.pas',
+  UClienteUseCases in 'application\useCases\UClienteUseCases.pas',
+  UClienteRepository in 'infrastructure\repository\UClienteRepository.pas';
 
 begin
   try
