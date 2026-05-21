@@ -1,0 +1,36 @@
+# Delphi / RAD Studio
+# Build artifacts
+*.exe
+*.dll
+*.lib
+*.dcu
+*.dcp
+*.bpl
+*.obj
+*.map
+
+# Delphi project/user files
+*.dproj.local
+*.local
+*.identcache
+*.dsk
+*.cfg
+
+# IDE / tooling
+__history__/
+__recovery__/
+*.~*
+*.res
+
+# Build folders
+Win32/
+Debug/
+Release/
+build/
+
+# OS
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/
