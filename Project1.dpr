@@ -13,11 +13,20 @@ uses
 
 begin
   try
-    { TODO -oUser -cConsole Main : Insert code here }
-    Writeln('ola');
-    readln;
+    var c := TCliente.Create('', 'joao.silva@email.com', '11999998888');
+    try
+      Writeln('Cliente criado com sucesso');
+      Writeln('Nome: ', c.Nome);
+      Writeln('E-mail: ', c.GetEmail);
+      Writeln('Telefone: ', c.GetTelefone);
+
+    finally
+      c.Free;
+    end;
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
   end;
+
+  Readln;
 end.
