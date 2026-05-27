@@ -13,7 +13,14 @@ uses
 
 begin
   try
-    var c := TCliente.Create('', 'joao.silva@email.com', '11999998888');
+    var repository := TClienteRepository.Create;
+    
+    var c := TCliente.Create('vitor', 'vitor.silva@email.com', '21911111111');
+    repository.SetCliente(c);
+
+    c := TCliente.Create('joão', 'joao.silva@email.com', '21922222222');
+    repository.SetCliente(c);
+    c := repository.GetCliente('21911111111');
     try
       Writeln('Cliente criado com sucesso');
       Writeln('Nome: ', c.Nome);
