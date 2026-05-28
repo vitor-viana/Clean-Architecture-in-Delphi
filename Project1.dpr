@@ -14,13 +14,12 @@ uses
 begin
   try
     var repository := TClienteRepository.Create;
-    
-    var c := TCliente.Create('vitor', 'vitor.silva@email.com', '21911111111');
-    repository.SetCliente(c);
+    var useCases := TClienteUseCases.Create(repository);
 
-    c := TCliente.Create('joão', 'joao.silva@email.com', '21922222222');
-    repository.SetCliente(c);
-    c := repository.GetCliente('21911111111');
+    useCases.SetCliente(TCliente.Create('vitor', 'vitor.silva@email.com', '21911111111'));
+    useCases.SetCliente(TCliente.Create('maria', 'maria.silva@email.com', '21922222222'));
+    var c := useCases.GetCliente('21911111111');
+
     try
       Writeln('Cliente criado com sucesso');
       Writeln('Nome: ', c.Nome);
